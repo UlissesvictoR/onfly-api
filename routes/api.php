@@ -16,9 +16,6 @@ use App\Http\Controllers\AuthController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-#Rotas das Despesas
-Route::get('/despesas', [DespesasController::class , 'index'] );
-Route::get('/despesas/{id}', [DespesasController::class , 'show'] );
 
 #Rotas dos Usuários
 Route::post('/register', [AuthController::class , 'register'] );
@@ -26,6 +23,9 @@ Route::post('/login', [AuthController::class , 'login'] );
 
 #Auth
 Route::group(['middleware' => ['auth:sanctum']], function (){
+    #Rotas das Despesas
+    Route::get('/despesas', [DespesasController::class , 'index'] );
+    Route::get('/despesas/{id}', [DespesasController::class , 'show'] );
     Route::post('/despesas', [DespesasController::class , 'store'] );
     Route::post('/despesas/{id}', [DespesasController::class , 'update'] );
     Route::delete('/despesas/{id}', [DespesasController::class , 'destroy'] );

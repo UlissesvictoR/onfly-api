@@ -34,18 +34,7 @@ class DespesasController extends Controller
             'desp_valor'     => 'required'
         ]);
 
-        //Esse funciona caso venha y-m-d
-        $separaFormato = str_split($request->desp_data);
-        foreach ($separaFormato as $row) {
-            if($row == '/'){
-                $date = Carbon::createFromFormat('d/m/Y H:i:s', $request->desp_data)->format('Y-m-d H:i:s');
-                if ($date >  localtime()) {
-                }
-                $request->request->add(['desp_data' => $date]);
-                break;
-            }
-        }
-
+        $validaData = (new Despesa())->verificaData($request);
         $despesa = Despesa::create($request->all());
 
         if($despesa){
