@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "320fb061-bacd-4bda-93f2-33ed9b8313e9",
+		"name": "onfly-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14196697"
+	},
+	"item": [
+		{
+			"name": "Get Despesas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/despesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"despesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Despesa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/despesas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"despesas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Despesas Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|8YFnCSjAosqlBUCgYApCmkuMNIdx0yKemDrJPVeK",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "desp_descricao",
+							"value": "Despesa com Token",
+							"type": "text"
+						},
+						{
+							"key": "desp_data",
+							"value": "2022-10-10 10:30:15",
+							"type": "text"
+						},
+						{
+							"key": "desp_usuario",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "desp_valor",
+							"value": "29.99",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/despesas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"despesas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Despesa Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "desp_descricao",
+							"value": "Teste atualizado 4",
+							"type": "text"
+						},
+						{
+							"key": "desp_valor",
+							"value": "25.99",
+							"type": "text"
+						},
+						{
+							"key": "desp_usuario",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "desp_data",
+							"value": "2022-11-14 01:50:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/despesas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"despesas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Despesa Destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/despesas/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"despesas",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Jopa",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ulisses2victor@hotmail.com",
+							"type": "text"
+						},
+						{
+							"key": "email_confirmation",
+							"value": "ulisses2victor@hotmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "ulissesvictor@hotmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|J3YgMpGPU6b8vC6rd1EXiAiTS5wxVLJjuTvmZyXW",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
